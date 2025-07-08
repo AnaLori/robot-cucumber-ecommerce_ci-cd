@@ -34,6 +34,15 @@ jobs:
         sudo mv chromedriver /usr/local/bin/
         chmod +x /usr/local/bin/chromedriver
 
+    - name: 🧪 Iniciar display virtual e rodar testes
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        export DISPLAY=:99
+        sleep 3
+        robot -d results features/    
+
     - name: 🧪 Rodar testes Robot
       run: |
         export PATH=$PATH:/usr/local/bin

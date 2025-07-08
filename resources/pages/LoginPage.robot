@@ -9,7 +9,13 @@ ${LOGIN_BUTTON}     xpath=//input[@type='submit']
 
 *** Keywords ***
 Go To Login Page
-    Open Browser    ${LOGIN_URL}    chrome
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-gpu
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --headless
+    Create WebDriver    Chrome    chrome_options=${options}
+    Go To    ${LOGIN_URL}
     Maximize Browser Window
 
 
