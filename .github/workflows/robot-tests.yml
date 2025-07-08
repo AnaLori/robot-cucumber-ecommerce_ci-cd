@@ -36,6 +36,8 @@ jobs:
         which chromium-browser
         chromium-browser --version
         chromedriver --version
+        google-chrome --headless --no-sandbox --disable-dev-shm-usage --remote-debugging-port=9222 https://www.google.com || true
+
 
     - name: 🧪 Iniciar display virtual e rodar testes Robot Framework
       run: |
@@ -43,6 +45,7 @@ jobs:
         Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
         sleep 3
         export PATH=$PATH:/usr/local/bin
+        chromium-browser --headless --no-sandbox --disable-dev-shm-usage --remote-debugging-port=9222 https://www.google.com || true
         robot -d results features/
 
     - name: 📄 Salvar relatórios
