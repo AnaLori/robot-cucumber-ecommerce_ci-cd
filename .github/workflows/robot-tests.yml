@@ -34,6 +34,9 @@ jobs:
         unzip chrome-linux64.zip
         unzip chromedriver-linux64.zip
         sudo mv chrome-linux64 /opt/chrome
-        sudo ln -s /opt/chrome/chrome /usr/bin/google-chrome
+        sudo ln -sf /opt/chrome/chrome /usr/bin/google-chrome
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
         chmod +x /usr/local/bin/chromedriver
+        which google-chrome
+        google-chrome --version
+        chromedriver --version
