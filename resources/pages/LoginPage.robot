@@ -8,6 +8,7 @@ ${PASSWORD_FIELD}   id=input-password
 ${LOGIN_BUTTON}     xpath=//input[@type='submit']
 
 *** Keywords ***
+*** Keywords ***
 Go To Login Page
     ${options}=    Evaluate    __import__('selenium.webdriver').ChromeOptions()
     Call Method    ${options}    add_argument    --headless

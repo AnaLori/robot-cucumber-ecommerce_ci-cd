@@ -24,9 +24,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install robotframework selenium
 
-    - name: 🌐 Instalar Google Chrome e ChromeDriver compatíveis
+    - name: 🌐 Instalar Google Chrome for Testing com ChromeDriver
       run: |
         sudo apt-get update
         sudo apt-get install -y wget unzip curl gnupg2 software-properties-common xvfb
-        curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
-        echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/
+        CHROME_VERSION=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | grep -A 20 linux64 | grep -m 1 version | cut -d '"' -f 4)
+        wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chrome-linux64.zip
+        wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chromedriver-linux64.zip
+        unzip chrome-linux64.zip
+        unzip chromedriver-linux64.zip
+        sudo mv chrome-linux64 /opt/chrome
+        sudo ln -s /opt/chrome/chrome /usr/bin/google-chrome
+        sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+        chmod +x /usr/local/bin/chromedriver
