@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-07-08T11:38:25.336069" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Suite" source="C:\Users\analo\cucumber_robot_ecommerce\tests\test_suite.robot">
+<test id="s1-t1" name="Login Successfully" line="5">
+<kw name="Im In Login Page" owner="steps">
+<kw name="Go To Login Page" owner="LoginPage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:25.556960" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/index.php?route=account/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-08T11:38:25.556810" elapsed="2.991219"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-08T11:38:28.548255" elapsed="0.020003"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:25.556372" elapsed="3.012012"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:25.556121" elapsed="3.012360"/>
+</kw>
+<kw name="Fill In The Email And Password" owner="steps">
+<kw name="Input Email" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:28.569605" level="INFO">Typing text 'anatestedesafio@gmail.com' into text field 'id=input-email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:28.569285" elapsed="0.095535"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-07-08T11:38:28.569069" elapsed="0.095865"/>
+</kw>
+<kw name="Input Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:28.665534" level="INFO">Typing text 'senhaenjoeiteste' into text field 'id=input-password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:28.665370" elapsed="0.057207"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-07-08T11:38:28.665120" elapsed="0.057569"/>
+</kw>
+<arg>anatestedesafio@gmail.com</arg>
+<arg>senhaenjoeiteste</arg>
+<status status="PASS" start="2025-07-08T11:38:28.568791" elapsed="0.153951"/>
+</kw>
+<kw name="Click On The Submit Button" owner="steps">
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:28.736168" level="INFO">Current page contains input 'xpath=//input[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:28.723467" elapsed="0.012769"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:28.736533" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:28.736364" elapsed="1.150225"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:28.723281" elapsed="1.163409"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:28.723037" elapsed="1.163701"/>
+</kw>
+<kw name="Validate The Title After Login" owner="steps">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:29.890448" level="INFO">Page title is 'My Account'.</msg>
+<arg>My Account</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-07-08T11:38:29.887208" elapsed="0.003303"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:29.886998" elapsed="0.003580"/>
+</kw>
+<kw name="Validate The Search Products Field After Login" owner="steps">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:29.897588" level="INFO">Current page contains element 'css=input[type="text"][name="search"]'.</msg>
+<arg>css=input[type="text"][name="search"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:29.891010" elapsed="0.006662"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:29.890800" elapsed="0.006951"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:25.555457" elapsed="4.342479"/>
+</test>
+<test id="s1-t2" name="Search For Canon" line="12">
+<kw name="Im In Home Page" owner="steps">
+<kw name="Go To Home Page" owner="HomePage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:29.899162" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-08T11:38:29.899029" elapsed="2.993911"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-08T11:38:32.893128" elapsed="0.052019"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:29.898873" elapsed="3.046412"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:29.898698" elapsed="3.046644"/>
+</kw>
+<kw name="I Search For The Product" owner="steps">
+<kw name="Search For Product" owner="SearchPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:32.946345" level="INFO">Typing text 'Canon EOS 5D' into text field 'css=input[type="text"][name="search"]'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:32.946163" elapsed="0.252674"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:33.199180" level="INFO">Clicking button 'xpath=//*[@id="search"]/div[2]/button'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:33.198997" elapsed="0.463658"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=img[alt="${product}"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:33.662820" elapsed="1.257939"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-07-08T11:38:32.945947" elapsed="1.974917"/>
+</kw>
+<arg>Canon EOS 5D</arg>
+<status status="PASS" start="2025-07-08T11:38:32.945672" elapsed="1.975250"/>
+</kw>
+<kw name="Search Results Must Be Shown" owner="steps">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=div.product-thumb</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:34.921431" elapsed="0.005828"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:34.930847" level="INFO">Current page contains element 'css=div.product-thumb'.</msg>
+<arg>css=div.product-thumb</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:34.927392" elapsed="0.003500"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:34.921200" elapsed="0.009748"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:29.898378" elapsed="5.032741"/>
+</test>
+<test id="s1-t3" name="Add Product To Cart" line="17">
+<kw name="Im In Home Page" owner="steps">
+<kw name="Go To Home Page" owner="HomePage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:34.932232" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/'.</msg>
+<arg>${HOME_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-08T11:38:34.932115" elapsed="2.835991"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-08T11:38:37.768429" elapsed="0.055533"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:34.931960" elapsed="2.892110"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:34.931793" elapsed="2.892330"/>
+</kw>
+<kw name="I Search For The Product" owner="steps">
+<kw name="Search For Product" owner="SearchPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:37.825177" level="INFO">Typing text 'iPod Nano' into text field 'css=input[type="text"][name="search"]'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:37.824987" elapsed="0.272077"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:38.097429" level="INFO">Clicking button 'xpath=//*[@id="search"]/div[2]/button'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:38.097248" elapsed="0.450927"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=img[alt="${product}"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:38.548387" elapsed="0.784560"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-07-08T11:38:37.824739" elapsed="1.508322"/>
+</kw>
+<arg>iPod Nano</arg>
+<status status="PASS" start="2025-07-08T11:38:37.824417" elapsed="1.508700"/>
+</kw>
+<kw name="Open The Product" owner="steps">
+<kw name="Open Product By Name" owner="SearchPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="caption"]//a[contains(text(),'${product}')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-08T11:38:39.333889" elapsed="0.012824"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:39.347106" level="INFO">Clicking element 'xpath=//div[@class="caption"]//a[contains(text(),'iPod Nano')]'.</msg>
+<arg>xpath=//div[@class="caption"]//a[contains(text(),'${product}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:39.346881" elapsed="1.489442"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-07-08T11:38:39.333674" elapsed="1.502758"/>
+</kw>
+<arg>iPod Nano</arg>
+<status status="PASS" start="2025-07-08T11:38:39.333407" elapsed="1.503079"/>
+</kw>
+<kw name="I Add The Product To The Cart" owner="steps">
+<kw name="Add Product To Cart" owner="CartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-08T11:38:40.837172" elapsed="0.009435"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:40.846954" level="INFO">Clicking button 'css=#entry_216843 &gt; button'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:40.846765" elapsed="0.038974"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:40.837003" elapsed="0.048841"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:40.836770" elapsed="0.049122"/>
+</kw>
+<kw name="I Should See The Product In The Cart Page" owner="steps">
+<kw name="Go To Cart Page" owner="CartPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:40.886746" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout'</msg>
+<arg>${CHECKOUT_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-08T11:38:40.886637" elapsed="1.563412"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CART_PRODUCT_ROW}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.450232" elapsed="0.008452"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:40.886462" elapsed="1.572328"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CART_PRODUCT_ROW}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.458923" elapsed="0.003860"/>
+</kw>
+<kw name="Product Should Be In Cart" owner="CartPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T11:38:42.463894" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.463749" elapsed="0.000171"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.467935" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c8ebcfa558e87263744290054cb7e8df", element="f.F83F8D8C1AAEA2B68BD9ECA0D2FB0312.d.9E9D3F87F47E96B5FD0AADCF265FBB77.e.341")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>${CART_PRODUCT_ROW}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.464010" elapsed="0.003957"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.476562" level="INFO">${name} = </msg>
+<var>${name}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.468313" elapsed="0.008291"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.481311" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c8ebcfa558e87263744290054cb7e8df", element="f.F83F8D8C1AAEA2B68BD9ECA0D2FB0312.d.9E9D3F87F47E96B5FD0AADCF265FBB77.e.341")&gt;' is displayed.</msg>
+<arg>${row}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.476931" elapsed="0.004441"/>
+</kw>
+<msg time="2025-07-08T11:38:42.481470" level="INFO">${is_visible} = True</msg>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${row}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.476777" elapsed="0.004717"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible} and '${product_name}' in '${name}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-08T11:38:42.481843" elapsed="0.000026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Product ${product_name} found in cart</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-08T11:38:42.481958" elapsed="0.000021"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2025-07-08T11:38:42.482054" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-07-08T11:38:42.481600" elapsed="0.000503"/>
+</branch>
+<status status="PASS" start="2025-07-08T11:38:42.481569" elapsed="0.000572"/>
+</if>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c8ebcfa558e87263744290054cb7e8df", element="f.F83F8D8C1AAEA2B68BD9ECA0D2FB0312.d.9E9D3F87F47E96B5FD0AADCF265FBB77.e.341")&gt;</var>
+<status status="PASS" start="2025-07-08T11:38:42.468224" elapsed="0.013941"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.487112" level="INFO">${name} = iPod Nano</msg>
+<var>${name}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.482497" elapsed="0.004644"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.492098" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c8ebcfa558e87263744290054cb7e8df", element="f.F83F8D8C1AAEA2B68BD9ECA0D2FB0312.d.9E9D3F87F47E96B5FD0AADCF265FBB77.e.342")&gt;' is displayed.</msg>
+<arg>${row}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.487380" elapsed="0.004788"/>
+</kw>
+<msg time="2025-07-08T11:38:42.492270" level="INFO">${is_visible} = True</msg>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${row}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.487252" elapsed="0.005041"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible} and '${product_name}' in '${name}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-08T11:38:42.492775" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.492620" elapsed="0.000179"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-08T11:38:42.492992" level="INFO">Product iPod Nano found in cart</msg>
+<arg>Product ${product_name} found in cart</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.492891" elapsed="0.000137"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2025-07-08T11:38:42.493173" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.493112" elapsed="0.000127"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:42.492386" elapsed="0.000892"/>
+</branch>
+<status status="PASS" start="2025-07-08T11:38:42.492359" elapsed="0.000960"/>
+</if>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c8ebcfa558e87263744290054cb7e8df", element="f.F83F8D8C1AAEA2B68BD9ECA0D2FB0312.d.9E9D3F87F47E96B5FD0AADCF265FBB77.e.342")&gt;</var>
+<status status="PASS" start="2025-07-08T11:38:42.482412" elapsed="0.010933"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-07-08T11:38:42.468037" elapsed="0.025354"/>
+</for>
+<if>
+<branch type="IF" condition="not ${found}">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>cart_debug.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-07-08T11:38:42.494287" elapsed="0.000024"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Product '${product_name}' not found in cart</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-08T11:38:42.494393" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-07-08T11:38:42.493469" elapsed="0.000977"/>
+</branch>
+<status status="PASS" start="2025-07-08T11:38:42.493455" elapsed="0.001022"/>
+</if>
+<arg>${product}</arg>
+<status status="PASS" start="2025-07-08T11:38:42.463065" elapsed="0.031454"/>
+</kw>
+<arg>iPod Nano</arg>
+<status status="PASS" start="2025-07-08T11:38:40.886182" elapsed="1.608386"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:34.931504" elapsed="7.563268"/>
+</test>
+<test id="s1-t4" name="Invalid Login" line="24">
+<kw name="Im In Login Page" owner="steps">
+<kw name="Go To Login Page" owner="LoginPage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:42.495978" level="INFO">Opening browser 'chrome' to base url 'https://ecommerce-playground.lambdatest.io/index.php?route=account/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-08T11:38:42.495842" elapsed="2.633105"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.129138" elapsed="0.034723"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:42.495674" elapsed="2.668290"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:42.495479" elapsed="2.668537"/>
+</kw>
+<kw name="Fill In The Email And Password" owner="steps">
+<kw name="Input Email" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:45.164967" level="INFO">Typing text 'anatestedesafio@gmail.com' into text field 'id=input-email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.164788" elapsed="0.090940"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-07-08T11:38:45.164582" elapsed="0.091267"/>
+</kw>
+<kw name="Input Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:45.256521" level="INFO">Typing text 'sen7777joeit' into text field 'id=input-password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.256333" elapsed="0.063178"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-07-08T11:38:45.256044" elapsed="0.063567"/>
+</kw>
+<arg>anatestedesafio@gmail.com</arg>
+<arg>sen7777joeit</arg>
+<status status="PASS" start="2025-07-08T11:38:45.164314" elapsed="0.155344"/>
+</kw>
+<kw name="Click On The Submit Button" owner="steps">
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:45.335742" level="INFO">Current page contains input 'xpath=//input[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.320359" elapsed="0.015466"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:45.336174" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.335979" elapsed="0.055135"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:45.320172" elapsed="0.071054"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:45.319936" elapsed="0.071344"/>
+</kw>
+<kw name="Invalid Credentials Message Must Be Shown" owner="steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Warning: No match for E-Mail Address and/or Password.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.391807" elapsed="0.418686"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-08T11:38:45.815366" level="INFO">Current page contains text 'Warning: No match for E-Mail Address and/or Password.'.</msg>
+<arg>Warning: No match for E-Mail Address and/or Password.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-07-08T11:38:45.810676" elapsed="0.004751"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:45.391568" elapsed="0.423931"/>
+</kw>
+<status status="PASS" start="2025-07-08T11:38:42.495196" elapsed="3.320513"/>
+</test>
+<status status="PASS" start="2025-07-08T11:38:25.337060" elapsed="20.479234"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Suite" id="s1" pass="4" fail="0" skip="0">Test Suite</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-08T11:38:25.553495" level="ERROR">Error in file 'C:\Users\analo\cucumber_robot_ecommerce\features\steps.robot' on line 7: Processing variable file '../variables/variables.robot' failed: Importing variable file '../variables/variables.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\analo\cucumber_robot_ecommerce\venv\Scripts\robot.exe
+  C:\Python313\python313.zip
+  C:\Python313\DLLs
+  C:\Python313\Lib
+  C:\Python313
+  C:\Users\analo\cucumber_robot_ecommerce\venv
+  C:\Users\analo\cucumber_robot_ecommerce\venv\Lib\site-packages</msg>
+</errors>
+</robot>
