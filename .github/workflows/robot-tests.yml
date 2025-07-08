@@ -29,9 +29,8 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y wget unzip curl gnupg2 software-properties-common xvfb \
           libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxss1 libxcomposite1 \
-          libxdamage1 libxrandr2 libgbm1 libasound2 fonts-liberation libdrm2
+          libxdamage1 libxrandr2 libgbm1 libdrm2 libasound2t64 fonts-liberation
 
-        # Versão fixa compatível
         CHROME_VERSION=114.0.5735.90
 
         wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chrome-linux64.zip
