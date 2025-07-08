@@ -24,11 +24,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install robotframework selenium
 
-    - name: 🌐 Instalar Google Chrome for Testing com ChromeDriver
+    - name: 🌐 Instalar Google Chrome for Testing com ChromeDriver e dependências extras
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip curl gnupg2 software-properties-common xvfb
-        CHROME_VERSION=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | grep -A 20 linux64 | grep -m 1 version | cut -d '"' -f 4)
+        sudo apt-get install -y wget unzip curl gnupg2 software-properties-common xvfb libnss3 libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxss1 libxcomposite1 libxdamage1 libxrandr2 libgbm1
+
+        # Versão fixa que funciona para chrome e chromedriver
+        CHROME_VERSION=114.0.5735.90
+
         wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chrome-linux64.zip
         wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chromedriver-linux64.zip
         unzip chrome-linux64.zip
@@ -37,6 +40,23 @@ jobs:
         sudo ln -sf /opt/chrome/chrome /usr/bin/google-chrome
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
         chmod +x /usr/local/bin/chromedriver
-        which google-chrome
+
         google-chrome --version
         chromedriver --version
+
+    - name: 🧪 Rodar testes Robot Framework em display virtual
+      run: |
+        Xvfb :99 -screen 0 1920x1080x24 &
+        export DISPLAY=:99
+        sleep 3
+        robot -d results features/
+
+    - name: 📄 Salvar relatórios
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-report
+        path: |
+          results/log.html
+          results/report.html
+          results/output.xml
+
