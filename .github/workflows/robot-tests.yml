@@ -19,41 +19,38 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: 📦 Instalar dependências
+    - name: 📦 Instalar dependências Python
       run: |
         python -m pip install --upgrade pip
         pip install robotframework selenium
 
-    - name: 🌐 Instalar navegador e driver
+    - name: 🌐 Instalar navegador, driver e dependências extras
       run: |
-        sudo apt update
-        sudo apt install -y wget unzip xvfb
-        sudo apt install -y chromium-browser
+        sudo apt-get update
+        sudo apt-get install -y wget unzip xvfb chromium-browser
+        sudo apt-get install -y libnss3 libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxss1 libxcomposite1 libxdamage1 libxrandr2 libgbm1
         wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
         unzip chromedriver_linux64.zip
         sudo mv chromedriver /usr/local/bin/
         chmod +x /usr/local/bin/chromedriver
+        which chromium-browser
+        chromium-browser --version
+        chromedriver --version
 
-    - name: 🧪 Iniciar display virtual e rodar testes
+    - name: 🧪 Iniciar display virtual e rodar testes Robot Framework
       run: |
-        sudo apt-get update
-        sudo apt-get install -y xvfb
-        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
         export DISPLAY=:99
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
         sleep 3
-        robot -d results features/    
-
-    - name: 🧪 Rodar testes Robot
-      run: |
         export PATH=$PATH:/usr/local/bin
-        xvfb-run robot features/
+        robot -d results features/
 
     - name: 📄 Salvar relatórios
       uses: actions/upload-artifact@v4
       with:
         name: robot-report
         path: |
-          log.html
-          report.html
-          output.xml
+          results/log.html
+          results/report.html
+          results/output.xml
 
